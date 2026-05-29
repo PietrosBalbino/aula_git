@@ -1,0 +1,4 @@
+/* Justifica o texto de todos os parágrafos do documento */
+p {
+  text-align: justify;
+}

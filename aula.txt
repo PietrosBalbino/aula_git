@@ -1,2 +1,10 @@
 Aula
-dia 2 a
+ testando ...
+definir main como o padrão global
+git config --global init.defaultBranch main
+
+Mudar o nome na hora de criar:
+git init -b main
+
+Renomear de master para main (em um repositório já existente):
+git branch -m master main
