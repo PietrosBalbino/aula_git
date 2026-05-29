@@ -154,3 +154,11 @@ Apos criar um arquivo e comitar as mudanças na nova branch, é hora de juntar a
 $ git checkout main
 $ git merge [nome_da_branch]
 ```
+Para apagar uma branch, use o comando `git branch -d [nome_da_branch]`. Você só pode apagar uma brancha estando em outra branch (use o comando `git checkout main` para isso).
+Confira se a branch que você quer apagar já foi mergeada com a branch principal!
+```bash
+$ git checkout main
+$ git branch -d [nome_da_branch]
+```
+### Resolvendo Conflitos
+
