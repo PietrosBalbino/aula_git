@@ -171,4 +171,7 @@ $ git commit -m "Resolvendo conflito no arquivo [nome_do_arquivo]"
 `<<<<<< HEAD` indica a versão atual do arquivo na branch onde você está.
 `=======` separa as duas versões do arquivo.
 `>>>>>>> [nome_da_branch]` indica a versão do arquivo na branch que você está tentando mergear.
+
+**Lembre-se: Você escolhe quais mudanças manter.** 
 :::: 
+
