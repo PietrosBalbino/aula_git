@@ -162,3 +162,13 @@ $ git branch -d [nome_da_branch]
 ```
 ### Resolvendo Conflitos
 
+Às vezes, quando duas pessoas editam o mesmo arquivo e tentam fazer merge, o Git não sabe qual versão escolher. Isso é chamado de conflito. O Git vai marcar o arquivo com os conflitos usando símbolos como `<<<<<<<`, `=======` e `>>>>>>>`. Para resolver o conflito, abra o arquivo, escolha quais mudanças manter e remova os símbolos de conflito. Depois disso, adicione o arquivo ao stage e faça um commit para finalizar a resolução do conflito.
+```bash
+$ git add [nome_do_arquivo]
+$ git commit -m "Resolvendo conflito no arquivo [nome_do_arquivo]"
+```
+:::: {.callout-warning}
+`<<<<<< HEAD` indica a versão atual do arquivo na branch onde você está.
+`=======` separa as duas versões do arquivo.
+`>>>>>>> [nome_da_branch]` indica a versão do arquivo na branch que você está tentando mergear.
+:::: 
