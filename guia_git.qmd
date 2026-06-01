@@ -175,3 +175,28 @@ $ git commit -m "Resolvendo conflito no arquivo [nome_do_arquivo]"
 **Lembre-se: Você escolhe quais mudanças manter.** 
 :::: 
 
+### GitHub: O Lar dos Repositórios
+
+
+**Como criar conta no GitHub.**
+
+- Acesse o site do GitHub: [github.com](https://github.com/?locale=pt-br)
+- No canto superior direito, clique em "Sign up" (Criar uma conta).
+- Crie a conta utilizando a conta google (ou Apple) e adicione o nome de usuário ou,
+- preencha os campos de nome de usuário, e-mail e senha e crie a conta.
+
+**Criando o rerpositório personalizado**
+
+Repositórios são como pastas online onde você pode armazenar e compartilhar seu código. 
+
+- Clique em repositories (repositórios) e depois em "New" (Novo).
+- Dê um nome para o seu repositório. Neste caso, de o nome igual ao seu nome de usuário do GitHub, para que o repositório seja personalizado.
+- Deixe a opção "Public" (Público) selecionada para que outras pessoas possam ver seu repositório.
+- Marque a opção "add README"
+
+::: {.callout-note}
+Algumas paginas do github para se inspirar:
+- [Mine Çetinkaya-Rundel](https://github.com/mine-cetinkaya-rundel)
+- [Beatriz Milz](https://github.com/beatrizmilz)
+- [Rafael Irizarry](https://github.com/rafalab)
+- [Izzy Terra](https://github.com/kterra)
