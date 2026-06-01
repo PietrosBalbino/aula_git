@@ -200,3 +200,30 @@ Algumas paginas do github para se inspirar:
 - [Beatriz Milz](https://github.com/beatrizmilz)
 - [Rafael Irizarry](https://github.com/rafalab)
 - [Izzy Terra](https://github.com/kterra)
+:::
+
+**Repositorio do projeto**
+
+- Crie um respositorio no github, sem Readme, sem .gitignore e sem licença.
+- Copie o link do repositório criado. git remote add origin [link_do_repositório] (considere que o já existe um repositório)
+
+```bash
+$ git remote add origin [link_do_repositório]
+```
+::: {.callout-note}
+O comando `git remote add origin` é usado para conectar seu repositório local ao repositório remoto no GitHub.
+:::
+- Caso não esteja na branch main, use o comando `git branch -M main` para renomear a branch atual para main.
+```bash
+$ git branch -M main
+```
+- Use o comando `git push -u origin main` para enviar as mudanças para o repositório remoto. Antes de usar esse comando, certifique-se de ter feito o commit das mudanças locais.
+```bash
+$ git status
+$ git add .
+$ git commit -m "[mensagem_do_commit]"
+$ git push -u origin main
+```
+::: {.callout-warning}
+Provavelmente será necessário fazer login no GitHub para autenticar o push. Siga as instruções na tela para concluir o processo de autenticação.
+:::
