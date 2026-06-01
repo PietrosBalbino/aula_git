@@ -227,3 +227,57 @@ $ git push -u origin main
 ::: {.callout-warning}
 Provavelmente será necessário fazer login no GitHub para autenticar o push. Siga as instruções na tela para concluir o processo de autenticação.
 :::
+
+- Crie um novo arquivo no repositório local, adicione e comite as mudanças, e depois use o comando `git push` para enviar as mudanças para o repositório remoto.
+
+```bash
+$ touch novo_arquivo.txt
+$ git add .
+$ git commit -m "[mensagem_do_commit]"
+$ git push origin main
+```
+
+::: {.callout-warning}
+Lembre-se sempre que **não devemos desenvolver direto na branch main**. O ideal é criar uma nova branch para desenvolver novas funcionalidades ou corrigir bugs, e depois fazer merge com a branch main.
+:::
+- Crie uma nova branch
+```bash
+$ git checkout -b [nome_nova_branch]
+```
+- Enviando a nova branch para o repositório remoto
+```bash
+$ git push -u origin [nome_nova_branch]
+```
+- No repositório remoto, crie um Pull Request `Compare and pull request` para solicitar a revisão e o merge das mudanças da nova branch para a branch main.
+
+::: {.callout-note}
+O **Pull Request** é uma forma de solicitar que outras pessoas revisem e aprovem as mudanças antes de serem integradas à branch principal. 
+É uma prática recomendada para garantir a qualidade do código e facilitar a colaboração em equipe.
+:::
+
+- Crie o `Merge do Pull Request` para integrar as mudanças da nova branch com a branch main e confirme o merge `Confirm merge`. (Geralmente quem faz o merge e confirme é o revisor do código)
+
+### Atualizando o repositório local com as mudanças do repositório remoto
+- Verificar se há mudanças no repositório remoto usando o comando `git fetch`.
+```bash
+$ git fetch
+```
+- Para atualizar a branch local com as mudanças do repositório remoto, use o comando `git pull origin main` (ou substitua "main" pelo nome da branch que deseja atualizar).
+```bash
+$ git pull origin main
+```
+### Fork e Clone
+
+**Fork**: O fork cria uma cópia do repositório de outra pessoa na sua conta do GitHub. 
+
+- Para criar uma cópia de um repositório existente, use o recurso de "Fork" no GitHub. Isso cria uma cópia do repositório na sua conta do GitHub.
+
+- Para a parte do fork, vamos usar o repositório Palmerpenguins: [palmerpenguins](https://github.com/allisonhorst/palmerpenguins). Tem outros interessantes como o awesome-datascience: [awesome-datascience](https://github.com/academic/awesome-datascience)
+
+**Clone**: O clone cria uma cópia local do repositório remoto.
+
+- Mude para uma pasta vazia e use o comando `git clone [link_do_repositório]` para clonar o repositório.
+```bash
+$ git clone [link_do_repositório]
+```
+

@@ -95,6 +95,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#criando-nova-branch" id="toc-criando-nova-branch" class="nav-link" data-scroll-target="#criando-nova-branch"><span class="header-section-number">2.2</span> Criando nova branch</a></li>
   <li><a href="#resolvendo-conflitos" id="toc-resolvendo-conflitos" class="nav-link" data-scroll-target="#resolvendo-conflitos"><span class="header-section-number">2.3</span> Resolvendo Conflitos</a></li>
   <li><a href="#github-o-lar-dos-repositórios" id="toc-github-o-lar-dos-repositórios" class="nav-link" data-scroll-target="#github-o-lar-dos-repositórios"><span class="header-section-number">2.4</span> GitHub: O Lar dos Repositórios</a></li>
+  <li><a href="#atualizando-o-repositório-local-com-as-mudanças-do-repositório-remoto" id="toc-atualizando-o-repositório-local-com-as-mudanças-do-repositório-remoto" class="nav-link" data-scroll-target="#atualizando-o-repositório-local-com-as-mudanças-do-repositório-remoto"><span class="header-section-number">2.5</span> Atualizando o repositório local com as mudanças do repositório remoto</a></li>
+  <li><a href="#fork-e-clone" id="toc-fork-e-clone" class="nav-link" data-scroll-target="#fork-e-clone"><span class="header-section-number">2.6</span> Fork e Clone</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -388,9 +390,80 @@ Aviso
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Possivelmente será necessário fazer login no GitHub para autenticar o push. Siga as instruções na tela para concluir o processo de autenticação.</p>
+<p>Provavelmente será necessário fazer login no GitHub para autenticar o push. Siga as instruções na tela para concluir o processo de autenticação.</p>
 </div>
 </div>
+<ul>
+<li>Crie um novo arquivo no repositório local, adicione e comite as mudanças, e depois use o comando <code>git push</code> para enviar as mudanças para o repositório remoto.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> touch novo_arquivo.txt</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git add .</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git commit <span class="at">-m</span> <span class="st">"[mensagem_do_commit]"</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git push origin main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aviso
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lembre-se sempre que <strong>não devemos desenvolver direto na branch main</strong>. O ideal é criar uma nova branch para desenvolver novas funcionalidades ou corrigir bugs, e depois fazer merge com a branch main.</p>
+</div>
+</div>
+<ul>
+<li>Crie uma nova branch</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git checkout <span class="at">-b</span> <span class="pp">[</span><span class="ss">nome_nova_branch</span><span class="pp">]</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Enviando a nova branch para o repositório remoto</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git push <span class="at">-u</span> origin <span class="pp">[</span><span class="ss">nome_nova_branch</span><span class="pp">]</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>No repositório remoto, crie um Pull Request <code>Compare and pull request</code> para solicitar a revisão e o merge das mudanças da nova branch para a branch main.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>O <strong>Pull Request</strong> é uma forma de solicitar que outras pessoas revisem e aprovem as mudanças antes de serem integradas à branch principal. É uma prática recomendada para garantir a qualidade do código e facilitar a colaboração em equipe.</p>
+</div>
+</div>
+<ul>
+<li>Crie o <code>Merge do Pull Request</code> para integrar as mudanças da nova branch com a branch main e confirme o merge <code>Confirm merge</code>. (Geralmente quem faz o merge e confirme é o revisor do código)</li>
+</ul>
+</section>
+<section id="atualizando-o-repositório-local-com-as-mudanças-do-repositório-remoto" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="atualizando-o-repositório-local-com-as-mudanças-do-repositório-remoto"><span class="header-section-number">2.5</span> Atualizando o repositório local com as mudanças do repositório remoto</h3>
+<ul>
+<li>Verificar se há mudanças no repositório remoto usando o comando <code>git fetch</code>.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git fetch</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Para atualizar a branch local com as mudanças do repositório remoto, use o comando <code>git pull origin main</code> (ou substitua “main” pelo nome da branch que deseja atualizar).</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git pull origin main</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="fork-e-clone" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="fork-e-clone"><span class="header-section-number">2.6</span> Fork e Clone</h3>
+<p><strong>Fork</strong>: O fork cria uma cópia do repositório de outra pessoa na sua conta do GitHub.</p>
+<ul>
+<li><p>Para criar uma cópia de um repositório existente, use o recurso de “Fork” no GitHub. Isso cria uma cópia do repositório na sua conta do GitHub.</p></li>
+<li><p>Para a parte do fork, vamos usar o repositório Palmerpenguins: <a href="https://github.com/allisonhorst/palmerpenguins">palmerpenguins</a>. Tem outros interessantes como o awesome-datascience: <a href="https://github.com/academic/awesome-datascience">awesome-datascience</a></p></li>
+</ul>
+<p><strong>Clone</strong>: O clone cria uma cópia local do repositório remoto.</p>
+<ul>
+<li>Mude para uma pasta vazia e use o comando <code>git clone [link_do_repositório]</code> para clonar o repositório.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git clone <span class="pp">[</span><span class="ss">link_do_repositório</span><span class="pp">]</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 
