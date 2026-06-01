@@ -4,19 +4,25 @@ subtitle: "GES-139 - Departamento de Estatística, Universidade Federal de Lavra
 author: "Pietros Balbino"
 format: 
   html:
+    embed-resources: true
     theme: cosmo 
     toc: true 
     toc-title: "Como instalar o Git"
     number-sections: true 
     code-copy: true
     css: "style.css"
+  pdf:
+    toc: true
+    number-sections: true
+execute:
+  echo: false
 lang: pt 
 ---
 
-## Instalando o Git
+## 🛠️ Como instalar o Git.
 Tempo de instalação: Aproximadamente 15 minutos.
 
-### Passo 1: O Download 
+### Passo 1: Baixando o Git
 
 - Acesse o site oficial do Git: [https://git-scm.com/downloads](https://git-scm.com/downloads).
 - Selecione o sistema operacional que você está usando (Windows, macOS ou Linux).
@@ -25,18 +31,18 @@ Tempo de instalação: Aproximadamente 15 minutos.
 
 ### Passo 2: Executando o Instalador
 
-- Next na primeira tela (General Public License)
+- Clique em **Next** na primeira tela (*General Public License*).
 
 ![license](image/license.png)
 
-- Local de instalação: Deixe o padrão e clique em Next.
+- Local de instalação: mantenha o diretório padrão e clique em **Next**.
 
 ![local](image/local.png)
 
 - Na tela de seleção de componentes (*Select Components*), certifique-se de marcar a opção **Windows Explorer integration**. Dentro dela, marque as duas opções: Deixe as opções padrão 
 *   `Git Bash Here`
 *   `Git GUI Here`
-* Deixe todas as outras opções como estão e clique em Next.
+* Mantenha as demais opções como estão e clique em **Next**.
 
 ![components](image/components.png)
 
@@ -44,7 +50,7 @@ Tempo de instalação: Aproximadamente 15 minutos.
 A integração com o Windows Explorer permitirá que você clique com o botão direito em qualquer pasta do seu computador e abra o terminal do Git diretamente lá.
 :::
 
-- Select Start Menu Folder: Deixe o padrão e clique em Next.
+- Select Start Menu Folder: Deixe o padrão e clique em **Next**.
 
 ![folder](image/folder.png)
 
@@ -53,9 +59,15 @@ A integração com o Windows Explorer permitirá que você clique com o botão d
 ![editor](image/editor.png)
 
 ::: {.callout-important}
-#### Evite o Vim!
-Por padrão, o Git usa um editor de texto chamado *Vim*, que pode ser muito confuso para quem não está acostumado a sair dele. 
-Na tela **"Choosing the default editor used by Git"**, abra o menu suspenso e mude a opção para **Notepad as Git's default editor** Isso facilitará muito a sua vida!
+## Evite o Vim
+
+Por padrão, o Git utiliza o editor de texto **Vim**. Embora seja muito poderoso, ele possui comandos próprios e pode causar dificuldades para iniciantes.
+
+Na tela **"Choosing the default editor used by Git"**, selecione:
+
+**Notepad as Git's default editor**
+
+Isso facilitará bastante os primeiros passos com Git.
 :::
 - Clique em **Next**.
 

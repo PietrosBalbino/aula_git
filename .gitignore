@@ -1,5 +1,6 @@
 # Arquivos gerados pelo Quarto
 *.html
+*.pdf
 **/*_files/
 
 # VS Code
