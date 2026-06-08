@@ -4,12 +4,18 @@ subtitle: "GES-139 - Departamento de Estatística, Universidade Federal de Lavra
 author: "Pietros Balbino"
 format: 
   html:
+    embed-resources: true
     theme: cosmo 
     toc: true 
     toc-title: "Introdução ao Git e GitHub"
     number-sections: true 
     code-copy: true
     css: "style.css"
+  pdf:
+    toc: true
+    number-sections: true
+execute:
+  echo: false
 lang: pt 
 ---
 
@@ -47,6 +53,15 @@ O comando `cd ..` é usado para voltar para a pasta anterior.
 ```bash
 $ cd ..
 ```
+Para abrir a pasta atual no explorador de arquivos, use o comando `explorer .` no Windows 
+```bash
+$ explorer .
+````
+ou `open .` no macOS.
+```bash
+$ open .
+```
+
 Para limpar a tela do terminal, use o comando `clear`.
 ```bash
 $ clear
@@ -60,6 +75,7 @@ Ou simplesmente usar o atalho de teclado: `Ctrl + L` (muito mais rápido e prát
 - `ls`: Lista o que tem.
 - `cd [nome_da_pasta]`: Muda de pasta.
 - `cd ..`: Volta para a pasta anterior.
+- `explorer .` ou `open .`: Abre a pasta atual no explorador de arquivos.
 - `clear`: Limpa a tela.
 :::
 
@@ -276,8 +292,59 @@ $ git pull origin main
 
 **Clone**: O clone cria uma cópia local do repositório remoto.
 
-- Mude para uma pasta vazia e use o comando `git clone [link_do_repositório]` para clonar o repositório.
+- Mude para uma pasta vazia (ou onde quer seu repositório) e use o comando `git clone [link_do_repositório]` para clonar o repositório.
 ```bash
 $ git clone [link_do_repositório]
 ```
+- Apos clonar o repositório, use o comando `cd [nome_da_pasta]` para entrar na pasta do projeto clonado.
 
+- Crie uma nova branch para desenvolver novas funcionalidades ou corrigir bugs usando o comando `git checkout -b [nome_nova_branch]`.
+
+- Use o comando `git push origin [nome_da_branch]` (ou somente `git push`) para atualizar a branch remota com as mudanças feitas na branch local.
+
+- Crie um Pull Request no repositório original para solicitar a revisão e o merge das mudanças da sua branch para a branch principal do repositório original.
+
+**Caso tenha mudanças no repositório original e queira atualizar seu repositório local:**
+
+- use o comando `git fetch ` para ver as mudanças no repositório remoto.
+```bash
+$ git fetch
+```
+- Use o comando `git pull origin main` (ou substitua "main" pelo nome da branch que deseja atualizar) para atualizar a branch local com as mudanças do repositório remoto.
+```bash
+$ git pull origin main
+```
+
+::: {.callout-note}
+Sempre antes de começar a trabalhar em um projeto, use os comandos `git fetch` e `git pull` para garantir que você tem a versão mais recente do código. Isso evita conflitos e garante que você esteja trabalhando com a versão mais atualizada do projeto.
+:::
+
+## Git no RStudio
+
+Clonando o projeto usando o RStudio
+
+- Crie um projeto no GitHub e copie o link do repositório.
+
+- No RStudio, vá em `File` > `New Project` > `Version Control` > `Git` e crie o projeto usando o link do repositório copiado. 
+
+- Será criado localmente alguns arquivos e pastas, como o arquivo .Rproj e o arquivo .gitignore. 
+
+- Clique no botão "Pull" para atualizar o repositório local 
+
+- Clique em no icone de branch para criar uma nova branch antes de começar a desenvolver novas funcionalidades ou corrigir bugs.
+
+- Use os botões "Commit" e "Push" para comitar as mudanças e enviar para o repositório remoto.
+
+
+**Projeto já existente na maquina local**
+
+- No RStudio, vá em `File` > `New Project` > `Existing Directory` e selecione a pasta do projeto local.
+- Se a pasta já é um repositório git, o RStudio vai detectar e habilitar as funcionalidades do git.
+
+- **Se a pasta não for um repositório git:**
+- Abra o terminal do RStudio e navegue até a pasta do projeto usando o comando `cd`.- Use o comando `git init` para transformar a pasta em um repositório git.
+- ou Vá em `Tools` > `Project Options` > `Git/SVN` e clique em "Use git for version control". O RStudio vai perguntar se você quer criar um repositório git na pasta do projeto. Clique em "Yes" para confirmar.
+
+::: {.callout-note}
+A vantagem de usar o RStudio para criar uma pasta com repositório git é que o RStudio vai configurar tudo automaticamente para você, incluindo a criação do arquivo .gitignore e a configuração do usuário do git. 
+:::
