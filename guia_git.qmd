@@ -348,3 +348,15 @@ Clonando o projeto usando o RStudio
 ::: {.callout-note}
 A vantagem de usar o RStudio para criar uma pasta com repositório git é que o RStudio vai configurar tudo automaticamente para você, incluindo a criação do arquivo .gitignore e a configuração do usuário do git. 
 :::
+
+## Criando o renv e gitignore
+
+O renv é uma ferramenta excelente para isolar os pacotes do seu projeto no RStudio, garantindo que o código rode em qualquer computador.
+
+- Instale o pacote renv usando o comando `install.packages("renv")` no console do RStudio.
+
+- Para criar o renv, use o comando `renv::init()` no console do RStudio. Isso vai criar um arquivo chamado `renv.lock` que guarda as informações dos pacotes usados no projeto.
+
+- Para instalar pacotes, você pode usar o comando `install.packages("nome_do_pacote")` normalmente. O renv vai atualizar o arquivo `renv.lock` automaticamente.
+
+- Quando for clonar um repositório que usa o renv, use o comando `renv::restore()` para instalar os pacotes necessários para rodar o código.
