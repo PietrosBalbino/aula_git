@@ -1,0 +1,3 @@
+project:
+  type: website # ou documento, se for apenas um arquivo avulso
+  output-dir: docs

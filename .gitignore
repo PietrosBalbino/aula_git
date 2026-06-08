@@ -7,8 +7,9 @@
 # Pastas geradas pelo Quarto
 /.quarto/
 /_book/
-/docs/
 *_files/
 
 # VS Code
 .vscode/
+
+**/*.quarto_ipynb
